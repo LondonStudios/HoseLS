@@ -56,6 +56,41 @@ namespace HoseScript
                     SyncedParticles[netId] = pitch;
                 }
             });
+
+            EventHandlers["Client:HoseCommand"] += new Action<bool>(async (permission) =>
+            {
+                if (permission)
+                {
+                    if (HoseActivated)
+                    {
+                        ShowNotification("Fire hose is now ~r~disabled~w~.");
+                        HoseActivated = false;
+                        ButtonPressed = false;
+                        RemoveWeaponFromPed(PlayerPedId(), (uint)GetHashKey("WEAPON_FIREEXTINGUISHER"));
+                    }
+                    else
+                    {
+                        ShowNotification("Fire hose is now ~b~enabled~w~.");
+                        if (!usedScript)
+                        {
+                            ShowNotification("~p~HoseLS ~w~made by ~b~London Studios ~w~and ~b~Adam Fenton~w~.");
+                            usedScript = true;
+                        }
+                        HoseActivated = true;
+                        var weapon = GetHashKey("WEAPON_FIREEXTINGUISHER");
+                        var ped = PlayerPedId();
+                        GiveWeaponToPed(ped, (uint)weapon, 1000, false, false);
+                        SetCurrentPedWeapon(ped, (uint)weapon, true);
+                        DisableControls();
+                        ContinueHose(ped);
+                    }
+                }
+                else
+                {
+                    ShowNotification("You do not have ~b~access ~w~to use the hose.");
+                }
+                await Delay(0);
+            });
         }
 
 
@@ -96,34 +131,6 @@ namespace HoseScript
             SetNotificationTextEntry("STRING");
             AddTextComponentString(text);
             EndTextCommandThefeedPostTicker(false, false);
-        }
-
-        [Command("hose")]
-        private void HoseCommand()
-        {
-            if (HoseActivated)
-            {
-                ShowNotification("Fire hose is now ~r~disabled~w~.");
-                HoseActivated = false;
-                ButtonPressed = false;
-                RemoveWeaponFromPed(PlayerPedId(), (uint)GetHashKey("WEAPON_FIREEXTINGUISHER"));
-            }
-            else
-            {
-                ShowNotification("Fire hose is now ~b~enabled~w~.");
-                if (!usedScript)
-                {
-                    ShowNotification("~p~HoseLS ~w~made by ~b~London Studios ~w~and ~b~Adam Fenton~w~.");
-                    usedScript = true;
-                }
-                HoseActivated = true;
-                var weapon = GetHashKey("WEAPON_FIREEXTINGUISHER");
-                var ped = PlayerPedId();
-                GiveWeaponToPed(ped, (uint)weapon, 1000, false, false);
-                SetCurrentPedWeapon(ped, (uint)weapon, true);
-                DisableControls();
-                ContinueHose(ped);
-            }
         }
 
         private async void ControlParticles()
