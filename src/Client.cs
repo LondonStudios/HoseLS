@@ -102,7 +102,7 @@ namespace HoseScript
             UseParticleFxAssetNextCall("core");
             var handleOffset = StartParticleFxLoopedOnEntity("water_cannon_spray", entity, 0.2f, 9.0f + SyncedParticles[netId] * 0.4f, 0f, 0.1f, 0.0f, 0.0f, 0.9f, false, false, false);      
             UseParticleFxAssetNextCall("core");
-            var handleOffset2 = StartParticleFxLoopedOnEntity("water_cannon_spray", entity, 0.2f, 9.0f + SyncedParticles[netId] * 0.4f, 0f, 0.1f, 0.0f, 0.0f, 1.2f, false, false, false);
+            var handleOffset2 = StartParticleFxLoopedOnEntity("water_cannon_spray", entity, 0.2f, 9.0f + SyncedParticles[netId] * 0.4f, 0f, 0.1f, 0.0f, 0.0f, 0.001f, false, false, false);
             while (SyncedParticles.ContainsKey(netId))
             {
                 SetParticleFxLoopedOffsets(handle, 0.26f, 0.2f, 0.13f, SyncedParticles[netId], 0.0f, 0.0f);
