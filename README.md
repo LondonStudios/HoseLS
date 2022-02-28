@@ -1,8 +1,3 @@
-
-
-# HoseLS - London Studios
-**HoseLS** is a **FiveM** resource coded in **C#** providing a realistic firefighting experience featuring a custom hose model and water jet, allowing you to fully extinguish fires.
-
 # Smart Hose - New
 ![Test](https://i.ibb.co/wsWVG9p/6-D938018-58-A9-4-AFB-A5-F0-8-EDB73-BB2-C64.png)
 
@@ -10,7 +5,9 @@ We've created a **new and upgraded version** of HoseLS with new features includi
 
 ## To check it out, head to our store [here](https://store.londonstudios.net/github)
 
-# Free Version (HoseLS)
+
+# HoseLS - London Studios
+**HoseLS** is a **FiveM** resource coded in **C#** providing a realistic firefighting experience featuring a custom hose model and water jet, allowing you to fully extinguish fires.
 
 **IMPORTANT**: When downloading the free version, you should use the sidebar to the right hand side to download the V2 release.
 
