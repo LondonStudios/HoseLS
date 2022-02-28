@@ -3,6 +3,18 @@
 # HoseLS - London Studios
 **HoseLS** is a **FiveM** resource coded in **C#** providing a realistic firefighting experience featuring a custom hose model and water jet, allowing you to fully extinguish fires.
 
+# Smart Hose - New
+![Test](https://i.ibb.co/wsWVG9p/6-D938018-58-A9-4-AFB-A5-F0-8-EDB73-BB2-C64.png)
+
+We've created a **new and upgraded version** of HoseLS with new features including **foam mode, pressure adjusted water** and more!
+
+## To check it out, head to our store [here](https://store.londonstudios.net/github)
+
+# Free Version (HoseLS)
+
+**IMPORTANT**: When downloading the free version, you should use the sidebar to the right hand side to download the V2 release.
+
+
 The included models have been created by Adam Fenton. We'd like to thank him for working with us.
 
 This plugin is made by **LondonStudios**, we have created a variety of releases including TaserFramework, SearchHandler, ActivateAlarm, SmartTester, SmartSounds, CustodyAlarm, SmartObservations and more!
